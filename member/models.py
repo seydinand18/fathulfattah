@@ -22,6 +22,7 @@ class Member(models.Model):
     ]
 
     code_member = models.CharField(max_length=20, default='DFF120190001',blank=True)
+    cell_member = models.ForeignKey("cell.Cell", on_delete=models.SET_NULL, blank=True, null=True)
     first_name = models.CharField(max_length=150, default='')
     last_name = models.CharField(max_length=150, default='')
     birth_date = models.DateField(blank=True, null=True)

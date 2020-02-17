@@ -25,5 +25,5 @@ urlpatterns = [
     path('', include('account.urls')),
     path('', views.index, name='index'),
     path('member/', include('member.urls')),
-    # path('cellules/', include('cellules.urls')),
+    path('cell/', include('cell.urls')),
 ]

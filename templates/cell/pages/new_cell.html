@@ -1,0 +1,55 @@
+{% extends '../../_admin/layouts/base_admin.html' %}
+
+
+{% block title %}
+    new Contact
+{% endblock %}
+
+{% block content %}
+<div class="row mt-4" >
+    <div class="col-md-6 m-auto">
+        <div class="card car-body">
+            <div class="m-auto mb-4 mt-4">
+                <h2>Ajouter une Cellule</h2>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="col-auto">
+                    <label class="sr-only" for="cell_label">Libellé</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Libellé</div>
+                        </div>
+                        <input type="text" class="form-control" name="cell_label" placeholder="">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="cell_addr">Adrsse cellule</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Adresse cellule</div>
+                        </div>
+                        <input type="text" class="form-control" name="cell_addr" placeholder="">
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <label class="sr-only" for="cell_link_map">Lien Map</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Lien Map</div>
+                        </div>
+                        <input type="text" class="form-control" name="cell_link_map" placeholder="">
+                    </div>
+                </div>
+                  <div class="col-auto">
+                      <button type="submit" class="btn btn-primary mb-2">Ajouter</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+    
+    

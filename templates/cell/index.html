@@ -1,0 +1,32 @@
+{% extends '../_admin/layouts/base_admin.html' %}
+
+{% block blockname %}Cellules{% endblock blockname %}
+
+
+{% block content %}
+    <div class="mt-4">
+        <a href="{% url 'new_cell' %}" class="btn btn-info">Ajouter nouveau Cellule</a>
+    </div>
+    {% if cells %}        
+        <table class="table" style="margin-top:50px">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Libellé</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cell in cells %}
+                    <tr>
+                        <th scope="row">{{ cell.id }}</th>
+                        <td><a href="detail/{{cell.id}}/">{{cell.cell_label}}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h1> Aucun Cellule a afficher</h1>
+    {% endif %}
+{% endblock %}
+    
+    
