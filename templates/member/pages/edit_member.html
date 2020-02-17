@@ -1,0 +1,75 @@
+{% extends '../../_admin/layouts/base_admin.html' %}
+
+{% block title %}
+    new Contact
+{% endblock %}
+
+{% block content %}
+<div class="row mt-4" >
+    <div class="col-md-6 m-auto">
+        <div class="card car-body">
+            <div class="m-auto mb-4 mt-4">
+                <h2>Ajouter un contact</h2>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="col-auto">
+                    <label class="sr-only" for="code_member">Code</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"> Code Membre</div>
+                        </div>
+                        <input type="text" class="form-control" value="{{ member.code_member }}" name="code_member" placeholder="code">
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <label class="sr-only" for="first_name">Prenom</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Prenom</div>
+                        </div>
+                        <input type="text" class="form-control" value="{{ member.first_name }}" name="first_name" placeholder="votre prenom">
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <label class="sr-only" for="last_name">Nom :</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Nom</div>
+                        </div>
+                        <input type="text" class="form-control"  value="{{ member.last_name }}" name="last_name" placeholder="votre prenom">
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <label class="sr-only" for="phone_number1">Telephone</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Telephone</div>
+                        </div>
+                        <input type="tel" class="form-control"  value="{{ member.phone_number1 }}" name="phone_number1" placeholder="votre numero de téléphone">
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <label class="sr-only" for="email">E-mail</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">E-mail</div>
+                        </div>
+                        <input type="email" class="form-control"  value="{{ member.email }}" name="email" placeholder="votre mail">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                      <button type="submit" class="btn btn-primary mb-2">Modifié</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+    
+    

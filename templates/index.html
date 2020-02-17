@@ -1,0 +1,25 @@
+{% extends 'default/layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}FathulFattah{% endblock%}
+
+{% block  content %}
+    <h2>Page a changer</h2>
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 col-12">
+                    <img class="" src="{% static 'img/logo.jpg' %}" alt="logo" width="200px">
+                </div>
+                <div class="col-md-8 col-sm-12 col-12">
+                    <h1>Bienvenu dans la plateforme de la Daara <strong>Fathul Fattah</strong></h1><br>
+                    <a class="btn btn-primary" href="{% url 'login' %}" role="button">Se Connecter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    
+
+

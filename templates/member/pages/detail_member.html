@@ -1,0 +1,22 @@
+{% extends '../../_admin/layouts/base_admin.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9 mt-5">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{member.code_member}}</li>
+                    <li class="list-group-item">{{member.first_name}}</li>
+                    <li class="list-group-item">{{member.last_name}}</li>
+                    <li class="list-group-item">{{member.phone_number1}}</li>
+                    <li class="list-group-item">{{member.email}}</li>
+                </ul>
+            </div>
+            <div class="mt-4">
+                <a href="{% url 'edit_member' member.id %}" class="btn btn-primary">Modifier</a>
+                <a href="{% url 'delete_member' member.id %}" class="btn btn-danger">Supprimer</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
