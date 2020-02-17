@@ -9,10 +9,10 @@
                 <a class="nav-link" href="/"><b class="caret">Home</b></a>
             </li>
             <li class="nav-item dropdown">
-				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><b class="caret">Admin-Générale</b></a>
+				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/member"><b class="caret">Admin-Générale</b></a>
 				<ul class="dropdown-menu">					
-					<li><a href="/membres" class="dropdown-item">Gestion Membre</a></li>
-                    <li><a href="/cellules" class="dropdown-item">Cellules</a></li>
+					<li><a href="{% url 'home_member' %}" class="dropdown-item">Gestion Membre</a></li>
+                    <li><a href="{% url 'home_cell' %}" class="dropdown-item">Cellules</a></li>
                     <li><a href="#" class="dropdown-item">Gestion papiers admin</a></li>
                 </ul>
             </li>
