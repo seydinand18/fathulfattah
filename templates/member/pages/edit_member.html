@@ -62,11 +62,16 @@
                         </div>
                         <input type="email" class="form-control"  value="{{ member.email }}" name="email" placeholder="votre mail">
                     </div>
+
                   </div>
+                  
+
                   <div class="col-auto">
+                    <label class="sr-only" for="cell_member">Cellule</label>
                     <div class="input-group mb-2">
-                        <label for="cell_member">Cellule</label>
-                        <div class="input-group-prepend"></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Celules</div>
+                        </div>
                             <select class="form-control" name="cell_member">
                                 {% for cell in cells %}
                                     <option value="{{cell.id}}">{{ cell.cell_label }}</option>
@@ -75,6 +80,7 @@
                         </div>
                     </div>
                 </div>
+
                   <div class="col-auto">
                       <button type="submit" class="btn btn-primary mb-2">Modifié</button>
                   </div>
