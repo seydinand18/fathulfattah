@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from .models import Member
 from cell.models import Cell
 
@@ -8,8 +9,21 @@ CELLS = Cell.objects.all()
 
 @login_required(login_url="/login/")
 def index(request):
-    members = Member.objects.all()
+    members_list = Member.objects.all()
+    paginator = Paginator(members_list, 5)
+    try:
+        page = int(request.GET.get('page', 1))
+    except:
+        page = 1
+
+    try:
+        members = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        members = paginator.page(paginator.num_pages)
     return render(request, 'member/index.html', {'members': members})
+
+
+
 
 
 @login_required(login_url="/login/")

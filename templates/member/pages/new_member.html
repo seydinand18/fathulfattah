@@ -66,10 +66,13 @@
                 </div>
 
                 <div class="col-auto">
+                    <label class="sr-only" for="cell_member">Cellule</label>
                     <div class="input-group mb-2">
-                        <label for="cell_member">Cellule</label>
-                        <div class="input-group-prepend"></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Celules</div>
+                        </div>
                             <select class="form-control" name="cell_member">
+                                <option value="">Selectionner une cellule</option>
                                 {% for cell in cells %}
                                     <option value="{{cell.id}}">{{ cell.cell_label }}</option>
                                 {% endfor %}
