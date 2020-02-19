@@ -33,8 +33,8 @@ class Member(models.Model):
     home_addr = models.CharField(max_length=150, default='', blank=True)
     current_addr = models.CharField(max_length=150, default='Bambey',blank=True)
     identity_photo = models.ImageField(("identity"), upload_to=None, height_field=None, width_field=None, max_length=None, blank=True)
-    phone_number1 = models.IntegerField(blank=True, null=True)
-    phone_number2 = models.IntegerField(blank=True, null=True)
+    phone_number1 = models.CharField(max_length = 150, blank=True, null=True)
+    phone_number2 = models.CharField(max_length = 150, blank=True, null=True)
     email = models.EmailField(max_length=254, unique=True, default='',blank=True)
     active = models.BooleanField(default=False)
 

@@ -1,6 +1,10 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Member
+from cell.models import Cell
+
+
+CELLS = Cell.objects.all()
 
 @login_required(login_url="/login/")
 def index(request):
@@ -23,6 +27,7 @@ def new_member(request):
         last_name = request.POST['last_name']
         phone_number1 = request.POST['phone_number1']
         email = request.POST['email']
+        cell_member = request.POST['cell_member']
 
         new_member = Member.objects.create(
             code_member = code_member,
@@ -30,32 +35,33 @@ def new_member(request):
             last_name = last_name,
             phone_number1 = phone_number1,
             email = email,
+            cell_member = Cell.objects.get(pk=cell_member),
         )
         new_member.save()
         return redirect("/member")
 
-    return render(request, 'member/pages/new_member.html')
+    return render(request, 'member/pages/new_member.html', {'cells': CELLS})
 
 @login_required(login_url="/login/")
 def edit_member(request, id):
     member = get_object_or_404(Member, id=id)
     if request.method == "POST":
-        code_member = request.POST['code_member']
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         phone_number1 = request.POST['phone_number1']
         email = request.POST['email']
+        cell_member = request.POST['cell_member']
 
         member_to_edit = Member.objects.filter(pk=member.id)
         member_to_edit.update(
-            code_member = code_member,
             first_name= first_name,
             last_name = last_name,
             phone_number1 = phone_number1,
             email = email,
+            cell_member = Cell.objects.get(pk=cell_member),
         )
         return redirect("/member")
-    return render(request, 'member/pages/edit_member.html', {'member': member})
+    return render(request, 'member/pages/edit_member.html', {'member': member, 'cells':CELLS})
 
 
 @login_required(login_url="/login/")

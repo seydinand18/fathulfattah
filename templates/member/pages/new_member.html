@@ -10,7 +10,7 @@
     <div class="col-md-6 m-auto">
         <div class="card car-body">
             <div class="m-auto mb-4 mt-4">
-                <h2>Ajouter un contact</h2>
+                <h2>Ajouter un Membre</h2>
             </div>
             <form method="POST">
                 {% csrf_token %}
@@ -31,7 +31,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">Prenom</div>
                         </div>
-                        <input type="text" class="form-control" name="first_name" placeholder="votre prenom">
+                        <input type="text" class="form-control" name="first_name" placeholder="votre prenom" required>
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">Nom</div>
                         </div>
-                        <input type="text" class="form-control" name="last_name" placeholder="votre prenom">
+                        <input type="text" class="form-control" name="last_name" placeholder="votre prenom" required>
                     </div>
                 </div>
 
@@ -63,10 +63,24 @@
                         </div>
                         <input type="email" class="form-control" name="email" placeholder="votre mail">
                     </div>
-                  </div>
-                  <div class="col-auto">
-                      <button type="submit" class="btn btn-primary mb-2">Ajouter</button>
-                  </div>
+                </div>
+
+                <div class="col-auto">
+                    <div class="input-group mb-2">
+                        <label for="cell_member">Cellule</label>
+                        <div class="input-group-prepend"></div>
+                            <select class="form-control" name="cell_member">
+                                {% for cell in cells %}
+                                    <option value="{{cell.id}}">{{ cell.cell_label }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2">Ajouter</button>
+                </div>
             </form>
         </div>
     </div>
