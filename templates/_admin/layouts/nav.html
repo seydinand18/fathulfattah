@@ -13,9 +13,42 @@
 				<ul class="dropdown-menu">					
 					<li><a href="{% url 'home_member' %}" class="dropdown-item">Gestion Membre</a></li>
                     <li><a href="{% url 'home_cell' %}" class="dropdown-item">Cellules</a></li>
-                    <li><a href="#" class="dropdown-item">Gestion papiers admin</a></li>
+                    <li><a href="#" class="dropdown-item">Bureau</a></li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><b class="caret">Finance</b></a>
+				<ul class="dropdown-menu">					
+					<li><a href="#" class="dropdown-item"></a></li>
+                    <li><a href="#" class="dropdown-item"></a></li>
+                    <li><a href="#" class="dropdown-item"></a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><b class="caret">Scientifique</b></a>
+				<ul class="dropdown-menu">					
+					<li><a href="#" class="dropdown-item"></a></li>
+                    <li><a href="#" class="dropdown-item"></a></li>
+                    <li><a href="#" class="dropdown-item"></a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href=""><b class="caret">Patrimoine</b></a>
+				<ul class="dropdown-menu">					
+					<li><a href="#" class="dropdown-item"></a></li>
+                    <li><a href="#" class="dropdown-item"></a></li>
+                    <li><a href="#" class="dropdown-item"></a></li>
+                </ul>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><b class="caret"></b></a>
+				<ul class="dropdown-menu">					
+					<li><a href="#" class="dropdown-item"></a></li>
+                    <li><a href="#" class="dropdown-item"></a></li>
+                    <li><a href="#" class="dropdown-item"></a></li>
+                </ul>
+            </li> -->
             
             <li class="nav-item ">
                 {% if request.user.is_authenticated %}
